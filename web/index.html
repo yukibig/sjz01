@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N1雷达</title>
+    <link rel="stylesheet" href="../static/css/样式.css">
+</head>
+<body>
+
+<!-- 页面加载蒙层 -->
+<div id="loading-overlay">
+    <div class="loading-container">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">正在加载中...</div>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-text" id="progress-text">0%</div>
+        </div>
+    </div>
+</div>
+
+<!-- 旧的设置按钮和面板已删除，现在使用雷达.js中动态创建的ImGui风格设置面板 -->
+
+<!-- 跟踪视角面板（已迁移到控制面板，保留HTML以防其他代码引用） -->
+<div id="tracking-panel" class="tracking-panel" style="display: none;">
+    <div class="tracking-options">
+        <div class="tracking-option" id="track-self" data-type="本人">
+            <div class="option-number">1</div>
+            <div class="option-content">
+                <span class="player-name">本人</span>
+            </div>
+        </div>
+        <div class="tracking-option" id="track-teammate1" data-type="队友">
+            <div class="option-number">2</div>
+            <div class="option-content">
+                <span class="player-name">队友1</span>
+            </div>
+        </div>
+        <div class="tracking-option" id="track-teammate2" data-type="队友">
+            <div class="option-number">3</div>
+            <div class="option-content">                <span class="player-name">队友2</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="sim-controls" class="container">
+    <div class="input-group">
+        <label>模拟切换底图（测试用）</label>
+        <div style="display:flex;gap:8px;justify-content:center;">
+            <button id="sim-ht">航天地图</button>
+            <button id="sim-cg">长弓溪谷</button>
+            <button id="sim-db">大坝地图</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <label>测试盒子显示</label>
+        <div style="display:flex;gap:8px;justify-content:center;">
+            <button id="sim-boxes">生成测试盒子</button>
+        </div>
+    </div>
+</div>
+
+<script src="../static/js/socket.js"></script>
+<script src="../static/js/模拟.js"></script>
+</body>
+</html>
